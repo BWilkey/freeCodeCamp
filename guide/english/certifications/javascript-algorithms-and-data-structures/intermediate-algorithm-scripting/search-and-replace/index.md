@@ -215,6 +215,23 @@ myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 
 ```
 
+### Code Explanation:
+
+*   Based on the challenge instructions, we only need to test the first character of the "before" parameter for case.
+*   If changing the "before" parameter's first character to uppercase does not have any affect on it, then make sure the first character of the "after" parameter is uppercase and perform the simple str.replace(), otherwise, simply perform the str.replace() with the parameters as passed.
+*   All action is in the return statement using a ternary operator.
+
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution Alternative 3:
+
+```javascript
+
+Function myReplace(str, before, after) {
+  return (before.substr(0,1).toUpperCase() === before.substr(0,1)) ? str.replace(before, after.replace(after.substr(0,1), after.substr(0,1).toUpperCase())) : str.replace(before, after);
+}
+
+myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped");
+
+```
 
 
 #### Relevant Links
